@@ -74,3 +74,18 @@ button {
 	color: #0a0a0a;
 	cursor: pointer;
 }
+
+#container-filters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 30px;
+}
+
+select {
+	font-size: 15px;
+	border-radius: 10px;
+	padding: 4px;
+	color: #635f5f;
+}
