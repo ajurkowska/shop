@@ -14,24 +14,24 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
+            <a href="home.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="home.html">Strona główna</a></li>
                 <li><a href="#"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="container-filters">
-        <select id="item-select">
+        <select id="select-box">
             <option value="">Sortowanie domyślne</option>
             <option value="alphabetically">Sortuj wg nazwy: A-Z</option>
             <option value="low">Sortuj wg ceny: od najniższej</option>
-            <option value="hgh">Sortuj wg ceny: od najwyższej</option>
+            <option value="high">Sortuj wg ceny: od najwyższej</option>
         </select>
-        <select id="item-category">
+        <select id="category-box">
             <option value="all">Wszystkie kategorie</option>
             <option value="finances">Finanse</option>
             <option value="development">Rozwój osobisty</option>
@@ -40,21 +40,21 @@
     </section>
 
     <section id="container-book">
-        <div class="item-book">
+        <div class="item-box">
             <img src="images/klub_5_rano.webp" alt='Okładka książki "Klub 5 rano"'>
             <h2 id="title">Klub 5 rano</h2>
             <p id="author">Robin Sharma</p>
             <p id="price">31.20 zł</p>
             <button data-id="1" data-title="Klub 5 rano" data-price="31.20" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
-        <div class="item-book">
+        <div class="item-box">
             <img src="images/atomowe_nawyki.webp" alt='Okładka książki "Atomowe nawyki"'>
             <h2 id="title">Atomowe nawyki</h2>
             <p id="author">James Clear</p>
             <p id="price">28.43 zł</p>
             <button data-id="2" data-title="Atomowe nawyki" data-price="28.43" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
-        <div class="item-book">
+        <div class="item-box">
             <img src="images/regula_5_sekund.webp" alt='Okładka książki "Reguła 5 sekund"'>
             <h2 id="title">Reguła 5 sekund</h2>
             <p id="author">Mel Robbins</p>
@@ -62,6 +62,6 @@
             <button data-id="3" data-title="Reguła 5 sekund" data-price="29.59" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
     </section>
-    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
