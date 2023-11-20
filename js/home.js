@@ -52,8 +52,16 @@ const handleButtonClick = (event) => {
 
 const selectOption = () => {
 	const seleted = selectBox.value;
-	if (seleted === 'alphabetically') {
-		sortByName();
+	switch (seleted) {
+		case 'alphabetically':
+			sortByName();
+			break;
+		case 'low':
+			sortFromLowest();
+			break;
+		case 'high':
+			sortFromHighest();
+			break;
 	}
 };
 
@@ -66,6 +74,42 @@ const sortString = (a, b) => {
 		return 0;
 	}
 };
+
+const sortFromHighest = () => {
+	const products = [];
+	for (let i = 0; i < itemBox.length; i++) {
+		const item = itemBox[i];
+		const title = item.querySelector('h2').innerText;
+		const price = Number(item.querySelector('span').innerText);
+		const product = { price, title, item };
+		products.push(product);
+	}
+	products.sort((a, b) => b.price - a.price);
+	
+	// usunięcie produktów z kontenera
+	containerBook.innerHTML = '';
+
+	// dodanie posortowanych produktów do kontenera
+	products.forEach(({ item }) => containerBook.appendChild(item));
+}
+
+const sortFromLowest = () => {
+	const products = [];
+	for (let i = 0; i < itemBox.length; i++) {
+		const item = itemBox[i];
+		const title = item.querySelector('h2').innerText;
+		const price = Number(item.querySelector('span').innerText);
+		const product = { price, title, item };
+		products.push(product);
+	}
+	products.sort((a, b) => a.price - b.price);
+	
+	// usunięcie produktów z kontenera
+	containerBook.innerHTML = '';
+
+	// dodanie posortowanych produktów do kontenera
+	products.forEach(({ item }) => containerBook.appendChild(item));
+}
 
 const sortByName = () => {
 	const products = [];
@@ -85,4 +129,4 @@ const sortByName = () => {
 };
 
 containerBook.addEventListener('click', handleButtonClick);
-selectBox.addEventListener('click', selectOption);
+selectBox.addEventListener('change', selectOption);
