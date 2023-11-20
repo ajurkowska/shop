@@ -1,15 +1,17 @@
 // pobranie elementów z HTML
 const containerBook = document.querySelector('#container-book');
 const counter = document.querySelector('#counter');
+const selectBox = document.querySelector('#select-box');
+const itemBox = document.querySelectorAll('.item-box');
 
 // lista produktów dodanych do koszyka
 // const, bo możemy modyfikować jej zawartość, ale nie możemy przypisać jej do nowej tablicy (zmienić referencji)
-const books = [];
+const productsInCart = [];
 
 const updateCounter = () => {
-	if (books.length > 0) {
+	if (productsInCart.length > 0) {
 		counter.classList.add('active');
-		counter.innerText = books.length;
+		counter.innerText = productsInCart.length;
 	} else {
 		counter.classList.remove('active');
 		counter.innerText = '';
@@ -27,13 +29,13 @@ const toggleCart = (element) => {
 };
 
 const addToCart = (id, title, price, button) => {
-	if (books.find((item) => item.id === id)) {
-        const index = books.findIndex(item => item.id === id);
-		books.splice(index, 1);
+	if (productsInCart.find((item) => item.id === id)) {
+		const index = productsInCart.findIndex((item) => item.id === id);
+		productsInCart.splice(index, 1);
 		toggleCart(button);
 		updateCounter();
 	} else {
-		books.push({ id, title, price });
+		productsInCart.push({ id, title, price });
 		toggleCart(button);
 		updateCounter();
 	}
@@ -48,4 +50,39 @@ const handleButtonClick = (event) => {
 	}
 };
 
+const selectOption = () => {
+	const seleted = selectBox.value;
+	if (seleted === 'alphabetically') {
+		sortByName();
+	}
+};
+
+const sortString = (a, b) => {
+	if (a > b) {
+		return 1;
+	} else if (a < b) {
+		return -1;
+	} else {
+		return 0;
+	}
+};
+
+const sortByName = () => {
+	const products = [];
+	for (let i = 0; i < itemBox.length; i++) {
+		const item = itemBox[i];
+		const title = item.querySelector('h2').innerText;
+		const product = { title, item };
+		products.push(product);
+	}
+	products.sort((a, b) => sortString(a.title, b.title));
+
+	// usunięcie produktów z kontenera
+	containerBook.innerHTML = '';
+
+	// dodanie posortowanych produktów do kontenera
+	products.forEach(({ item }) => containerBook.appendChild(item));
+};
+
 containerBook.addEventListener('click', handleButtonClick);
+selectBox.addEventListener('click', selectOption);
