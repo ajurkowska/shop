@@ -75,7 +75,8 @@ const sortString = (a, b) => {
 	}
 };
 
-const sortFromHighest = () => {
+// pobranie informacji o produktach i zwrócenie tablicy obiektów
+const getProductsToArray = () => {
 	const products = [];
 	for (let i = 0; i < itemBox.length; i++) {
 		const item = itemBox[i];
@@ -84,48 +85,30 @@ const sortFromHighest = () => {
 		const product = { price, title, item };
 		products.push(product);
 	}
-	products.sort((a, b) => b.price - a.price);
-	
+	return products;
+};
+
+// ponowne wczytanie kontenera z posortowanymi produktami
+const reloadContainter = (sortString) => {
+	const products = getProductsToArray().sort(sortString);
+
 	// usunięcie produktów z kontenera
 	containerBook.innerHTML = '';
 
 	// dodanie posortowanych produktów do kontenera
 	products.forEach(({ item }) => containerBook.appendChild(item));
-}
+};
+
+const sortFromHighest = () => {
+	reloadContainter((a, b) => b.price - a.price);
+};
 
 const sortFromLowest = () => {
-	const products = [];
-	for (let i = 0; i < itemBox.length; i++) {
-		const item = itemBox[i];
-		const title = item.querySelector('h2').innerText;
-		const price = Number(item.querySelector('span').innerText);
-		const product = { price, title, item };
-		products.push(product);
-	}
-	products.sort((a, b) => a.price - b.price);
-	
-	// usunięcie produktów z kontenera
-	containerBook.innerHTML = '';
-
-	// dodanie posortowanych produktów do kontenera
-	products.forEach(({ item }) => containerBook.appendChild(item));
-}
+	reloadContainter((a, b) => a.price - b.price);
+};
 
 const sortByName = () => {
-	const products = [];
-	for (let i = 0; i < itemBox.length; i++) {
-		const item = itemBox[i];
-		const title = item.querySelector('h2').innerText;
-		const product = { title, item };
-		products.push(product);
-	}
-	products.sort((a, b) => sortString(a.title, b.title));
-
-	// usunięcie produktów z kontenera
-	containerBook.innerHTML = '';
-
-	// dodanie posortowanych produktów do kontenera
-	products.forEach(({ item }) => containerBook.appendChild(item));
+	reloadContainter((a, b) => sortString(a.title, b.title));
 };
 
 containerBook.addEventListener('click', handleButtonClick);
