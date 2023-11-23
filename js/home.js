@@ -3,6 +3,7 @@ const containerBook = document.querySelector('#container-book');
 const counter = document.querySelector('#counter');
 const selectBox = document.querySelector('#select-box');
 const itemBox = document.querySelectorAll('.item-box');
+const filterBox = document.querySelector('#filter-box');
 
 // lista produktów dodanych do koszyka
 // const, bo możemy modyfikować jej zawartość, ale nie możemy przypisać jej do nowej tablicy (zmienić referencji)
@@ -65,13 +66,32 @@ const selectOption = () => {
 	}
 };
 
-const sortString = (a, b) => {
-	if (a > b) {
-		return 1;
-	} else if (a < b) {
-		return -1;
+const filterOption = () => {
+	const filtered = filterBox.value;
+	switch (filtered) {
+		case 'all':
+			filterByCategory('all');
+			break;
+		case 'finances':
+			filterByCategory('finances');
+			break;
+		case 'development':
+			filterByCategory('development');
+			break;
+		case 'it':
+			filterByCategory('it');
+			break;
+	}
+};
+
+const filterByCategory = (category) => {
+	const products = getProductsToArray();
+	const filteredProduct = products.filter((product) => product.category === category);
+	if (category !== 'all') {
+		containerBook.innerHTML = '';
+		filteredProduct.forEach(({item}) => containerBook.appendChild(item));
 	} else {
-		return 0;
+		products.forEach(({ item }) => containerBook.appendChild(item));
 	}
 };
 
@@ -81,11 +101,23 @@ const getProductsToArray = () => {
 	for (let i = 0; i < itemBox.length; i++) {
 		const item = itemBox[i];
 		const title = item.querySelector('h2').innerText;
+		const titleElement = item.querySelector('#title');
 		const price = Number(item.querySelector('span').innerText);
-		const product = { price, title, item };
+		const category = titleElement.dataset.category;
+		const product = { price, title, category, item };
 		products.push(product);
 	}
 	return products;
+};
+
+const sortString = (a, b) => {
+	if (a > b) {
+		return 1;
+	} else if (a < b) {
+		return -1;
+	} else {
+		return 0;
+	}
 };
 
 // ponowne wczytanie kontenera z posortowanymi produktami
@@ -113,3 +145,4 @@ const sortByName = () => {
 
 containerBook.addEventListener('click', handleButtonClick);
 selectBox.addEventListener('change', selectOption);
+filterBox.addEventListener('change', filterOption);
