@@ -31,7 +31,7 @@
             <option value="low">Sortuj wg ceny: od najniższej</option>
             <option value="high">Sortuj wg ceny: od najwyższej</option>
         </select>
-        <select id="category-box">
+        <select id="filter-box">
             <option value="all">Wszystkie kategorie</option>
             <option value="finances">Finanse</option>
             <option value="development">Rozwój osobisty</option>
@@ -42,24 +42,38 @@
     <section id="container-book">
         <div class="item-box">
             <img src="images/klub_5_rano.webp" alt='Okładka książki "Klub 5 rano"'>
-            <h2 id="title">Klub 5 rano</h2>
+            <h2 id="title" data-category="development">Klub 5 rano</h2>
             <p id="author">Robin Sharma</p>
-            <p id="price">31.20 zł</p>
+            <p><span id="price">31.20</span> zł</p>
             <button data-id="1" data-title="Klub 5 rano" data-price="31.20" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
         <div class="item-box">
             <img src="images/atomowe_nawyki.webp" alt='Okładka książki "Atomowe nawyki"'>
-            <h2 id="title">Atomowe nawyki</h2>
+            <h2 id="title" data-category="development">Atomowe nawyki</h2>
             <p id="author">James Clear</p>
-            <p id="price">28.43 zł</p>
+            <p><span id="price">28.43</span> zł</p>
             <button data-id="2" data-title="Atomowe nawyki" data-price="28.43" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
         <div class="item-box">
             <img src="images/regula_5_sekund.webp" alt='Okładka książki "Reguła 5 sekund"'>
-            <h2 id="title">Reguła 5 sekund</h2>
+            <h2 id="title" data-category="development">Reguła 5 sekund</h2>
             <p id="author">Mel Robbins</p>
-            <p id="price">29.59 zł</p>
+            <p><span id="price">29.59</span> zł</p>
             <button data-id="3" data-title="Reguła 5 sekund" data-price="29.59" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
+        </div>
+        <div class="item-box">
+            <img src="images/finansowy-ninja.webp" alt='Okładka książki "Finansowy ninja"'>
+            <h2 id="title" data-category="finances">Finansowy ninja</h2>
+            <p id="author">Michał Szafrański</p>
+            <p><span id="price">112.89</span> zł</p>
+            <button data-id="4" data-title="Finansowy ninja" data-price="112.89" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
+        </div>
+        <div class="item-box">
+            <img src="images/czysty-kod.webp" alt='Okładka książki "Czysty kod"'>
+            <h2 id="title" data-category="it">Czysty kod</h2>
+            <p id="author">Martin Robert C.</p>
+            <p><span id="price">49.19</span> zł</p>
+            <button data-id="5" data-title="Czysty kod" data-price="49.19" style="font-family:'Lato', sans-serif">Dodaj do koszyka</button>
         </div>
     </section>
     <script src="js/home.js"></script>
