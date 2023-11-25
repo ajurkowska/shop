@@ -6,8 +6,7 @@ const itemBox = document.querySelectorAll('.item-box');
 const filterBox = document.querySelector('#filter-box');
 
 // lista produktów dodanych do koszyka
-// const, bo możemy modyfikować jej zawartość, ale nie możemy przypisać jej do nowej tablicy (zmienić referencji)
-const productsInCart = [];
+let productsInCart = [];
 
 const updateCounter = () => {
 	if (productsInCart.length > 0) {
@@ -29,16 +28,37 @@ const toggleCart = (element) => {
 	}
 };
 
+const updateStorage = () => {
+	// konwertowanie tablicy do stringa za pomocą stringify
+	localStorage.setItem('item', JSON.stringify(productsInCart));
+};
+
+const loadFromStorage = () => {
+	const savedData = localStorage.getItem('item');
+	if (savedData) {
+		productsInCart = JSON.parse(savedData);
+
+		for (let i = 0; i < productsInCart.length; i++) {
+			const element = productsInCart[i].id;
+			const button = document.querySelector(`button[data-id="${element}"]`);
+			toggleCart(button);
+		}
+		updateCounter();
+	}
+};
+
 const addToCart = (id, title, price, button) => {
 	if (productsInCart.find((item) => item.id === id)) {
 		const index = productsInCart.findIndex((item) => item.id === id);
 		productsInCart.splice(index, 1);
 		toggleCart(button);
 		updateCounter();
+		updateStorage();
 	} else {
 		productsInCart.push({ id, title, price });
 		toggleCart(button);
 		updateCounter();
+		updateStorage();
 	}
 };
 
@@ -86,10 +106,12 @@ const filterOption = () => {
 
 const filterByCategory = (category) => {
 	const products = getProductsToArray();
-	const filteredProduct = products.filter((product) => product.category === category);
+	const filteredProduct = products.filter(
+		(product) => product.category === category
+	);
 	if (category !== 'all') {
 		containerBook.innerHTML = '';
-		filteredProduct.forEach(({item}) => containerBook.appendChild(item));
+		filteredProduct.forEach(({ item }) => containerBook.appendChild(item));
 	} else {
 		products.forEach(({ item }) => containerBook.appendChild(item));
 	}
@@ -146,3 +168,5 @@ const sortByName = () => {
 containerBook.addEventListener('click', handleButtonClick);
 selectBox.addEventListener('change', selectOption);
 filterBox.addEventListener('change', filterOption);
+// wczytanie danych z localStorage po załadowaniu strony
+window.addEventListener('load', loadFromStorage);
