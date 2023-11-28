@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Koszyk</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Strona główna</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="container-cart">
+        <h2>Twój koszyk</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Produkt</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                    <th>Kwota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="btn-delete"><i class="fa-solid fa-xmark"></i></button></td>
+                    <td><img class="img-cart" src="images/klub_5_rano.webp" alt="okładka książki"></td>
+                    <td>Klub 5 rano</td>
+                    <td><span>31.20</span> zł</td>
+                    <td><input id="number" type="number" value="1" min="1"></td>
+                    <td><span>31.20</span> zł</td>
+                </tr>
+                <tr>
+                    <td><button class="btn-delete"><i class="fa-solid fa-xmark"></i></button></td>
+                    <td><img class="img-cart" src="images/atomowe_nawyki.webp" alt="okładka książki"></td>
+                    <td>Atomowe nawyki</td>
+                    <td><span>28.43</span> zł</td>
+                    <td><input id="number" type="number" value="1" min="1"></td>
+                    <td><span>28.43</span> zł</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="update"></td>
+                    <td colspan="5" class="update"><button>Zaktualizuj koszyk</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="container-summary">
+        <h4>Podsumowanie koszyka</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Kwota</th>
+                    <td><span>59.63</span> zł</td>
+                </tr>
+                <tr>
+                    <th>Wysyłka</th>
+                    <td><span>9.99</span> zł</td>
+                </tr>
+                <tr>
+                    <th>Łącznie</th>
+                    <td><span>69.62</span> zł</td>
+                </tr>
+            </tbody>
+        </table>
+        <button>Przejdź do kasy</button>
+    </section>
+
+</body>
+</html>
