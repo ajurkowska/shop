@@ -43,7 +43,7 @@ nav ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 250px;
+	gap: 120px 300px;
 	margin: 50px 150px;
 	color: #323131;
 }
@@ -101,4 +101,76 @@ select {
 	padding: 5px;
 	border-radius: 50%;
 	margin-left: -10px;
+}
+
+#container-cart {
+	color: #635f5f;
+	margin: 45px 0;
+}
+
+#container-cart h2 {
+	text-align: center;
+}
+
+#container-cart table {
+	margin: 45px auto;
+}
+
+th, td {
+	text-align: center;
+	padding: 4px 10px;
+	border-bottom: solid 1px rgb(133, 131, 131);
+}
+
+th {
+	padding-bottom: 15px;
+}
+
+.update {
+	border: transparent;
+}
+
+.btn-delete {
+	background-color: transparent;
+	color: #635f5f;
+}
+
+.img-cart {
+	height: 100px;
+}
+
+#container-summary {
+	color: #635f5f;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#container-summary td {
+	width: 220px;
+}
+
+#container-summary th {
+    width: 50%;
+}
+
+#container-summary th, td {
+    padding: 15px;
+}
+
+#container-summary h4 {
+	margin: 25px 0;
+}
+
+#container-summary button {
+	margin-top: 30px;	
+}
+
+#number {
+	width: 45px;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 35px;
+	border: solid 1px #aba7a7;
+	color: #635f5f;
 }
