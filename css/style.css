@@ -116,10 +116,21 @@ select {
 	margin: 45px auto;
 }
 
+#info-empty-cart {
+	display: none;
+	justify-content: center;
+	width: 50%;
+	margin: 70px auto;
+	padding: 10px 20px;
+	font-size: 17px;
+	color: #ffffff;
+	background-color: #c99f4f;
+}
+
 th, td {
 	text-align: center;
 	padding: 4px 10px;
-	border-bottom: solid 1px rgb(133, 131, 131);
+	border-bottom: solid 1px #858383;
 }
 
 th {
