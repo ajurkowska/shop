@@ -47,7 +47,7 @@ const loadFromStorage = () => {
 	}
 };
 
-const addToCart = (id, title, price, button) => {
+const addToCart = (id, title, price, image, button) => {
 	if (productsInCart.find((item) => item.id === id)) {
 		const index = productsInCart.findIndex((item) => item.id === id);
 		productsInCart.splice(index, 1);
@@ -55,7 +55,7 @@ const addToCart = (id, title, price, button) => {
 		updateCounter();
 		updateStorage();
 	} else {
-		productsInCart.push({ id, title, price });
+		productsInCart.push({ id, title, price, image });
 		toggleCart(button);
 		updateCounter();
 		updateStorage();
@@ -67,7 +67,8 @@ const handleButtonClick = (event) => {
 		const id = Number(event.target.dataset.id);
 		const title = event.target.dataset.title;
 		const price = Number(event.target.dataset.price);
-		addToCart(id, title, price, event.target);
+		const image = event.target.dataset.image;
+		addToCart(id, title, price, image, event.target);
 	}
 };
 
