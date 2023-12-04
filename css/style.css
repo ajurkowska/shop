@@ -113,6 +113,7 @@ select {
 }
 
 #container-cart table {
+	width: 50%;
 	margin: 45px auto;
 }
 
@@ -150,6 +151,13 @@ th {
 	height: 100px;
 }
 
+.container-btn {
+	width: 50%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
 #container-summary {
 	color: #635f5f;
 	display: flex;
@@ -175,6 +183,10 @@ th {
 
 #container-summary button {
 	margin-top: 30px;	
+}
+
+.total {
+	font-weight: bold;
 }
 
 #number {
