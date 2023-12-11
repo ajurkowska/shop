@@ -9,9 +9,14 @@ const filterBox = document.querySelector('#filter-box');
 let productsInCart = [];
 
 const updateCounter = () => {
+	let allQuantity = 0;
+	for (const product of productsInCart) {
+		allQuantity += Number(product.quantity);
+	}
+
 	if (productsInCart.length > 0) {
 		counter.classList.add('active');
-		counter.innerText = productsInCart.length;
+		counter.innerText = allQuantity;
 	} else {
 		counter.classList.remove('active');
 		counter.innerText = '';
@@ -37,17 +42,18 @@ const loadFromStorage = () => {
 	const savedData = localStorage.getItem('item');
 	if (savedData) {
 		productsInCart = JSON.parse(savedData);
-
 		for (let i = 0; i < productsInCart.length; i++) {
 			const element = productsInCart[i].id;
 			const button = document.querySelector(`button[data-id="${element}"]`);
-			toggleCart(button);
+			if (button) {
+				toggleCart(button);
+				updateCounter();
+			}
 		}
-		updateCounter();
 	}
 };
 
-const addToCart = (id, title, price, image, button) => {
+const addToCart = (id, title, price, image, button, quantity = 1) => {
 	if (productsInCart.find((item) => item.id === id)) {
 		const index = productsInCart.findIndex((item) => item.id === id);
 		productsInCart.splice(index, 1);
@@ -55,7 +61,7 @@ const addToCart = (id, title, price, image, button) => {
 		updateCounter();
 		updateStorage();
 	} else {
-		productsInCart.push({ id, title, price, image });
+		productsInCart.push({ id, title, price, image, quantity });
 		toggleCart(button);
 		updateCounter();
 		updateStorage();
