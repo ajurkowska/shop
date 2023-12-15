@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Strona główna</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Strona główna</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="forms">
+        <form class="payment-details">
+            <h3>Dane płatności</h3>
+
+            <label for="name">Imię *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="lastname">Nazwisko *</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="company">Nazwa firmy (opcjonalnie)</label>
+            <input type="text" id="company" name="company">
+
+            <div class="invoice">
+                <input id="invoice" type="checkbox">
+                <label for="invoice">Chcę otrzymać fakturę</label>
+            </div>
+
+            <div class="nip">
+                <label for="nip">NIP (opcjonalnie)</label>
+                <input type="text" id="nip" name="nip">
+            </div>
+
+            <label for="country">Kraj *</label>
+            <p type="text" id="lastname" name="lastname">Polska</p>
+
+            <label for="street">Ulica *</label>
+            <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu"
+                required>
+
+            <label for="codepost">Kod pocztowy *</label>
+            <input type="text" id="codepost" name="codepost" required>
+
+            <label for="city">Miasto *</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="phone">Numer telefonu *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Adres email *</label>
+            <input type="email" id="email" name="email" required>
+        </form>
+
+        <form action="" class="second-payment-details">
+            <div class="another-address">
+                <input id="another-address" type="checkbox">
+                <h3>Wysłać na inny adres</h3>
+            </div>
+
+            <label for="name">Imię *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="lastname">Nazwisko *</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="company">Nazwa firmy (opcjonalnie)</label>
+            <input type="text" id="company" name="company">
+
+            <div class="nip">
+                <label for="nip">NIP (opcjonalnie)</label>
+                <input type="text" id="nip" name="nip">
+            </div>
+
+            <label for="country">Kraj *</label>
+            <p type="text" id="lastname" name="lastname">Polska</p>
+
+            <label for="street">Ulica *</label>
+            <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu"
+                required>
+
+            <label for="codepost">Kod pocztowy *</label>
+            <input type="text" id="codepost" name="codepost" required>
+
+            <label for="city">Miasto *</label>
+            <input type="text" id="city" name="city" required>
+        </form>
+    </section>
+
+    <section id="order-summary">
+        <h3>Twoje zamówienie</h3>
+        <table id="order-table">
+            <!-- <tbody>
+                <tr>
+                    <th>Produkt</th>
+                    <td>Tytuł x1</td>
+                </tr>
+                <tr>
+                    <th>Kwota</th>
+                    <td class="total"></td>
+                </tr>
+                <tr>
+                    <th>Wysyłka</th>
+                    <td><span>9.99</span> zł</td>
+                </tr>
+                <tr>
+                    <th>Łącznie</th>
+                    <td class="total"></td>
+                </tr>
+            </tbody> -->
+        </table>
+
+        <div class="payment-method">
+            <div>
+                <input type="radio" name="payment-method" id="transfer">
+                <label for="transfer">Przelew bankowy</label>
+            </div>
+
+            <div>
+                <input type="radio" name="payment-method" id="blik">
+                <label for="blik">BLIK</label>
+            </div>
+        </div>
+
+        <hr>
+
+        <p>Twoje dane osobowe będą użyte do przetworzenia zamówienia, ułatwienia korzystania ze strony internetowej oraz
+            innych celów opisanych w naszej polityce prywatności.</p>
+
+        <div id="statute">
+            <input type="checkbox" name="statute" required>
+            <label for="statute">Przeczytałem/am i akceptuję regulamin.*</label>
+        </div>
+
+        <div class="buttons">
+            <a href="cart.html"><button>Wróć</button></a>
+            <a href=""><button id="pay-btn">Kupuję i płacę</button></a>
+        </div>
+    </section>
+
+    <script src="js/order.js"></script>
+</body>
+</html>
