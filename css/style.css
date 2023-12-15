@@ -45,7 +45,8 @@ nav ul {
 	justify-content: center;
 	gap: 120px 300px;
 	margin: 50px 150px;
-	color: #323131;
+	/* color: #323131; */
+	color: #635F5F;
 }
 
 .item-box img {
@@ -196,4 +197,125 @@ th {
 	border-radius: 35px;
 	border: solid 1px #aba7a7;
 	color: #635f5f;
+}
+
+#order-btn a {
+	text-decoration: none;
+	color: #000000;
+}
+
+/* order */
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 15px;
+	width: 25%;
+	color: #635F5F;
+}
+
+form label {
+	margin: 15px 0 5px 0;
+	font-size: 14px;
+}
+
+form input {
+	margin: 3px 0 3px 0;
+	padding: 2px;
+	line-height: 16px;
+}
+
+.nip {
+	display: none;
+	flex-direction: column;
+}
+
+.invoice {
+	margin-top: 15px;
+}
+
+.another-address {
+	display: flex;
+} 
+
+.another-address h3 {
+	margin-left: 10px;
+}
+
+#lastname {
+	margin-top: px;
+}
+
+#forms {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	margin: 20px 0 40px 0;
+}
+
+#order-summary .payment-method {
+	display: flex;
+	flex-direction: column;
+	color: #635F5F;
+}
+
+#order-summary div {
+	margin-top: 5px;
+}
+
+#order-summary .payment-method input {
+	margin: 15px 8px 0 0;
+}
+
+#order-summary {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #635f5f;
+}
+
+#order-summary td {
+	width: 220px;
+}
+
+#order-summary th {
+    width: 50%;
+}
+
+#order-summary th, td {
+    padding: 15px;
+}
+
+#order-summary h3 {
+	margin: 25px 0;
+}
+
+#order-summary button {
+	margin-top: 30px;	
+}
+
+#order-summary p {
+	justify-content: center;
+	text-align: justify;
+	width: 30%;
+	margin: 10 px 0;
+	font-size: 13px;
+}
+
+#order-summary hr {
+	margin: 30px 0;
+	width: 30%;
+	color:#635F5F;
+}
+
+#statute input {
+	margin-top: 30px;
+}
+
+#pay-btn {
+	margin-bottom: 40px;
+}
+
+.buttons {
+	display: flex;
+	gap: 15px
 }
