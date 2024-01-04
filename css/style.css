@@ -205,7 +205,7 @@ th {
 }
 
 /* order */
-form {
+.form {
 	display: flex;
 	flex-direction: column;
 	margin: 15px;
@@ -213,15 +213,37 @@ form {
 	color: #635F5F;
 }
 
-form label {
+.form label {
 	margin: 15px 0 5px 0;
 	font-size: 14px;
 }
 
-form input {
+.form input {
 	margin: 3px 0 3px 0;
 	padding: 2px;
 	line-height: 16px;
+}
+
+.address-form {
+	display: flex;
+	flex-direction: column;
+	/* margin: 15px; */
+	color: #635F5F;
+}
+
+.address-form label {
+	margin: 15px 0 5px 0;
+	font-size: 14px;
+}
+
+.address-form input {
+	margin: 3px 0 3px 0;
+	padding: 2px;
+	line-height: 16px;
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 .nip {
@@ -247,6 +269,7 @@ form input {
 
 #forms {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 50px;
 	margin: 20px 0 40px 0;
@@ -311,11 +334,21 @@ form input {
 	margin-top: 30px;
 }
 
-#pay-btn {
+#buy-btn {
 	margin-bottom: 40px;
 }
 
 .buttons {
 	display: flex;
 	gap: 15px
+}
+
+.error-text {
+	font-size: 12px;
+	color: rgb(181, 31, 4);
+	font-style: italic;
+}
+
+.error {
+	border: 1px solid rgb(181, 31, 4);
 }
