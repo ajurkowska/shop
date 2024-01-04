@@ -25,18 +25,21 @@
         </nav>
     </header>
 
-    <section id="forms">
-        <form class="payment-details">
+    <form id="forms">
+        <section class="payment-details form">
             <h3>Dane płatności</h3>
 
             <label for="name">Imię *</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name">
+            <p class="error-text"></p>
 
             <label for="lastname">Nazwisko *</label>
-            <input type="text" id="lastname" name="lastname" required>
+            <input type="text" id="lastname" name="lastname">
+            <p class="error-text"></p>
 
             <label for="company">Nazwa firmy (opcjonalnie)</label>
             <input type="text" id="company" name="company">
+            <p class="error-text"></p>
 
             <div class="invoice">
                 <input id="invoice" type="checkbox">
@@ -46,113 +49,107 @@
             <div class="nip">
                 <label for="nip">NIP (opcjonalnie)</label>
                 <input type="text" id="nip" name="nip">
+                <p class="error-text"></p>
             </div>
 
             <label for="country">Kraj *</label>
-            <p type="text" id="lastname" name="lastname">Polska</p>
+            <p type="text" id="country" name="country">Polska</p>
 
             <label for="street">Ulica *</label>
-            <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu"
-                required>
+            <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu">
+            <p class="error-text"></p>
 
-            <label for="codepost">Kod pocztowy *</label>
-            <input type="text" id="codepost" name="codepost" required>
+            <label for="zip">Kod pocztowy *</label>
+            <input type="text" id="zip" name="zip">
+            <p class="error-text"></p>
 
             <label for="city">Miasto *</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" name="city">
+            <p class="error-text"></p>
 
             <label for="phone">Numer telefonu *</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone">
+            <p class="error-text"></p>
 
             <label for="email">Adres email *</label>
-            <input type="email" id="email" name="email" required>
-        </form>
+            <input type="text" id="email" name="email">
+            <p class="error-text"></p>
 
-        <form action="" class="second-payment-details">
+            <ul id="errors"></ul>
+        </section>
+
+        <section class="form">
             <div class="another-address">
-                <input id="another-address" type="checkbox">
+                <input id="address-checkbox" type="checkbox">
                 <h3>Wysłać na inny adres</h3>
             </div>
 
-            <label for="name">Imię *</label>
-            <input type="text" id="name" name="name" required>
+            <div class="address-form hidden">
+                <label for="name-delivery">Imię *</label>
+                <input type="text" id="name-delivery" name="name-delivery">
+                <p class="error-text"></p>
 
-            <label for="lastname">Nazwisko *</label>
-            <input type="text" id="lastname" name="lastname" required>
+                <label for="lastname-delivery">Nazwisko *</label>
+                <input type="text" id="lastname-delivery" name="lastname-delivery">
+                <p class="error-text"></p>
 
-            <label for="company">Nazwa firmy (opcjonalnie)</label>
-            <input type="text" id="company" name="company">
+                <label for="company-delivery">Nazwa firmy (opcjonalnie)</label>
+                <input type="text" id="company-delivery" name="company-delivery">
+                <p class="error-text"></p>
 
-            <div class="nip">
-                <label for="nip">NIP (opcjonalnie)</label>
-                <input type="text" id="nip" name="nip">
+                <label for="country-delivery">Kraj *</label>
+                <p type="text" id="country-delivery" name="country-delivery">Polska</p>
+                <p class="error-text"></p>
+
+                <label for="street-delivery">Ulica *</label>
+                <input type="text" id="street-delivery" name="street-delivery" placeholder="Nazwa ulicy, numer budynku / numer lokalu">
+                <p class="error-text"></p>
+
+                <label for="zip-delivery">Kod pocztowy *</label>
+                <input type="text" id="zip-delivery" name="zip-delivery">
+                <p class="error-text"></p>
+
+                <label for="city-delivery">Miasto *</label>
+                <input type="text" id="city-delivery" name="city-delivery">
+                <p class="error-text"></p>
+            </div>
+        </section>
+
+
+        <div id="order-summary">
+            <h3>Twoje zamówienie</h3>
+            <table id="order-box">
+            </table>
+
+            <div class="payment-method">
+                <div>
+                    <input type="radio" name="payment-method" value="transfer" checked>
+                    <label for="transfer">Przelew bankowy</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="payment-method" value="blik">
+                    <label for="blik">BLIK</label>
+                </div>
             </div>
 
-            <label for="country">Kraj *</label>
-            <p type="text" id="lastname" name="lastname">Polska</p>
+            <hr>
 
-            <label for="street">Ulica *</label>
-            <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu"
-                required>
+            <p>Twoje dane osobowe będą użyte do przetworzenia zamówienia, ułatwienia korzystania ze strony internetowej
+                oraz
+                innych celów opisanych w naszej polityce prywatności.</p>
 
-            <label for="codepost">Kod pocztowy *</label>
-            <input type="text" id="codepost" name="codepost" required>
-
-            <label for="city">Miasto *</label>
-            <input type="text" id="city" name="city" required>
-        </form>
-    </section>
-
-    <section id="order-summary">
-        <h3>Twoje zamówienie</h3>
-        <table id="order-table">
-            <!-- <tbody>
-                <tr>
-                    <th>Produkt</th>
-                    <td>Tytuł x1</td>
-                </tr>
-                <tr>
-                    <th>Kwota</th>
-                    <td class="total"></td>
-                </tr>
-                <tr>
-                    <th>Wysyłka</th>
-                    <td><span>9.99</span> zł</td>
-                </tr>
-                <tr>
-                    <th>Łącznie</th>
-                    <td class="total"></td>
-                </tr>
-            </tbody> -->
-        </table>
-
-        <div class="payment-method">
-            <div>
-                <input type="radio" name="payment-method" id="transfer">
-                <label for="transfer">Przelew bankowy</label>
+            <div id="statute">
+                <input type="checkbox" name="statute" required checked>
+                <label for="statute">Przeczytałem/am i akceptuję regulamin.*</label>
             </div>
 
-            <div>
-                <input type="radio" name="payment-method" id="blik">
-                <label for="blik">BLIK</label>
+            <div class="buttons">
+                <a href="cart.html"><button>Wróć</button></a>
+                <a href=""><button id="buy-btn" typ="submit">Kupuję i płacę</button></a>
             </div>
         </div>
-
-        <hr>
-
-        <p>Twoje dane osobowe będą użyte do przetworzenia zamówienia, ułatwienia korzystania ze strony internetowej oraz
-            innych celów opisanych w naszej polityce prywatności.</p>
-
-        <div id="statute">
-            <input type="checkbox" name="statute" required>
-            <label for="statute">Przeczytałem/am i akceptuję regulamin.*</label>
-        </div>
-
-        <div class="buttons">
-            <a href="cart.html"><button>Wróć</button></a>
-            <a href=""><button id="pay-btn">Kupuję i płacę</button></a>
-        </div>
-    </section>
+    </form>
 
     <script src="js/order.js"></script>
 </body>
