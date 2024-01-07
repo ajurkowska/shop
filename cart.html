@@ -16,9 +16,13 @@
             <a href="home.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-desktop">
                 <li><a href="home.html">Strona główna</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a>
+                </li>
+            </ul>
+            <ul class="nav-mobile">
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter-mobile"></span></i></a>
                 </li>
             </ul>
         </nav>
@@ -65,6 +69,7 @@
         <a href="order.html"><button id="order-btn">Przejdź do płatności</button></a>
     </section>
 
+    <script src="js/counter.js"></script>
     <script src="js/cart.js"></script>
 </body>
 </html>

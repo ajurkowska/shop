@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="css/style.css">
     <title>Strona główna</title>
 </head>
-
 <body>
     <header>
         <div class="logo">
             <a href="home.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-desktop">
                 <li><a href="home.html">Strona główna</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a>
+                </li>
+            </ul>
+            <ul class="nav-mobile">
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter-mobile"></span></i></a>
                 </li>
             </ul>
         </nav>
@@ -53,7 +55,7 @@
             </div>
 
             <label for="country">Kraj *</label>
-            <p type="text" id="country" name="country">Polska</p>
+            <p id="country" name="country">Polska</p>
 
             <label for="street">Ulica *</label>
             <input type="text" id="street" name="street" placeholder="Nazwa ulicy, numer budynku / numer lokalu">
@@ -98,7 +100,7 @@
                 <p class="error-text"></p>
 
                 <label for="country-delivery">Kraj *</label>
-                <p type="text" id="country-delivery" name="country-delivery">Polska</p>
+                <p id="country-delivery" name="country-delivery">Polska</p>
                 <p class="error-text"></p>
 
                 <label for="street-delivery">Ulica *</label>
@@ -114,7 +116,6 @@
                 <p class="error-text"></p>
             </div>
         </section>
-
 
         <div id="order-summary">
             <h3>Twoje zamówienie</h3>
@@ -136,8 +137,7 @@
             <hr>
 
             <p>Twoje dane osobowe będą użyte do przetworzenia zamówienia, ułatwienia korzystania ze strony internetowej
-                oraz
-                innych celów opisanych w naszej polityce prywatności.</p>
+                oraz innych celów opisanych w naszej polityce prywatności.</p>
 
             <div id="statute">
                 <input type="checkbox" name="statute" required checked>
@@ -145,12 +145,13 @@
             </div>
 
             <div class="buttons">
-                <a href="cart.html"><button>Wróć</button></a>
-                <a href=""><button id="buy-btn" typ="submit">Kupuję i płacę</button></a>
+                <button id="back-btn">Wróć</button>
+                <button id="buy-btn" typ="submit">Kupuję i płacę</button>
             </div>
         </div>
     </form>
 
+    <script src="js/counter.js"></script>
     <script src="js/order.js"></script>
 </body>
 </html>
