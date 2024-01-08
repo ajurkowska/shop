@@ -3,7 +3,6 @@ const containerProducts = document.querySelector('#container-products');
 const containerSummary = document.querySelector('#container-summary');
 const table = document.querySelector('#table');
 const infoEmptyCart = document.querySelector('#info-empty-cart');
-const counter = document.querySelector('#counter');
 const updateCartBtn = document.querySelector('#update-cart-btn');
 
 const createProduct = (productId, title, price, image, quantity) => {

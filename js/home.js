@@ -1,6 +1,5 @@
 // pobranie elementów z HTML
 const containerBook = document.querySelector('#container-book');
-const counter = document.querySelector('#counter');
 const selectBox = document.querySelector('#select-box');
 const itemBox = document.querySelectorAll('.item-box');
 const filterBox = document.querySelector('#filter-box');
@@ -130,7 +129,7 @@ const getProductsToArray = () => {
 	for (let i = 0; i < itemBox.length; i++) {
 		const item = itemBox[i];
 		const title = item.querySelector('h2').innerText;
-		const titleElement = item.querySelector('#title');
+		const titleElement = item.querySelector('.title');
 		const price = Number(item.querySelector('span').innerText);
 		const category = titleElement.dataset.category;
 		const product = { price, title, category, item };
