@@ -74,6 +74,32 @@ const clearErrorInfo = (input) => {
 	input.nextElementSibling.innerText = '';
 };
 
+const saveDataToStorage = () => {
+	const buyer = {
+		name: nameInput.value,
+		lastName: lastNameInput.value,
+		company: companyInput.value,
+		street: streetInput.value,
+		zip: zipInput.value,
+		city: cityInput.value,
+		nip: nipInput.value
+	};
+
+	const address = {
+		name: nameDeliveryInput.value,
+		lastName: lastNameDeliveryInput.value,
+		company: companyDeliveryInput.value,
+		street: streetDeliveryInput.value,
+		zip: zipDeliveryInput.value,
+		city: cityDeliveryInput.value
+	};
+
+	localStorage.setItem('buyer', JSON.stringify(buyer));
+	if (addressCheckbox.checked) {
+		localStorage.setItem('address', JSON.stringify(address));
+	}
+}
+
 const onSubmit = (event) => {
 	event.preventDefault();
 	checkEmptyFields(mainData);
@@ -211,7 +237,8 @@ const checkErrors = () => {
     })
 	
     if (errorCounter === 0) {
-        window.location.href = '#';
+		saveDataToStorage();
+        window.location.href = 'summary.html';
     }
 }
 
