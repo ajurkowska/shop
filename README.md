@@ -14,17 +14,24 @@ The project presents a virtual online shop that has been designed to be fully re
 - sorting products by price and alphabetically
 - filtering products by categories: finance, personal development, it
 - adding a product to the cart
+- saving data to localStorage
+- RWD
 2. Card page
 - displaying products added to the cart
 - removing the product from the cart
 - changing the number of products added to the cart
 - updating product prices
 - displaying a summary with the total price
+- saving data to localStorage
+- RWD
 3. Order page
 - verification of the data provided in the form
-4. All pages
+- saving data to localStorage
 - RWD
-- saving data
+4. Summary page
+- displaying summary of the paid order
+- saving data to localStorage
+- RWD
 
 
 
