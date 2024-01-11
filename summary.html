@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Podsumowanie</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-book-open"></i> Sklep internetowy</a>
+        </div>
+        <nav>
+            <ul class="nav-desktop">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter"></span></i> Koszyk</a>
+                </li>
+            </ul>
+            <ul class="nav-mobile">
+                <li><a href="cart.html"><i class="fa-solid fa-basket-shopping"><span id="counter-mobile"></span></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="thanks-box">
+        <div class="info payment">
+            <div><i class="fa-solid fa-square-check" style="color: #1d831b;"></i><br>Twoja płatność została zrealizowana.<br>Dziękujemy za złożone zamówienie.</div>
+            <div><i class="fa-solid fa-truck" style="color: #1d831d;"></i><br>Przesyłka zostanie dostarczona pod wskazany adres do dnia <span id="delivery-date"></span></div>
+        </div>
+       
+        <div class="info buyer">
+            <div><p>Dane nabywcy</p><span id="buyer-box"></span></div>
+            <div><p>Adres dostawy</p><span id="address-box"></span></div>
+        </div>
+        
+    </section>
+
+    <script src="js/summary.js"></script>
+</body>
+</html>
