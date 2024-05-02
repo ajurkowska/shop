@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+:root {
+	--color--primary: #c99f4f;
+    --color--secondary: #635f5f;
+}
+
 body {
 	font-family: 'Lato', sans-serif;
 	background-color: #ffffff;
@@ -19,18 +24,18 @@ header {
 header a {
 	font-size: 18px;
 	text-decoration: none;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 header a:hover {
-	color: #c99f4f;
+	color: var(--color--primary);
 	transition: 1s;
 }
 
 .logo a {
 	font-size: 25px;
 	font-weight: bold;
-	color: #c99f4f;
+	color: var(--color--primary);
 }
 
 nav ul {
@@ -50,7 +55,7 @@ nav ul {
 	justify-content: center;
 	gap: 120px 300px;
 	margin: 50px 150px;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 .item-box img {
@@ -75,7 +80,7 @@ button {
 	margin: 10px 0;
 	font-size: 16px;
 	border: none;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 	color: #0a0a0a;
 	cursor: pointer;
 }
@@ -96,12 +101,12 @@ select {
 	font-size: 15px;
 	border-radius: 10px;
 	padding: 4px;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 .active {
 	font-size: 9px;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 	color: #ffffff;
 	padding: 5px;
 	border-radius: 50%;
@@ -122,7 +127,7 @@ h1 {
 
 /* CART */
 #container-cart {
-	color: #635f5f;
+	color: var(--color--secondary);
 	margin: 45px 0;
 }
 
@@ -148,7 +153,7 @@ h1 {
 	padding: 10px 20px;
 	font-size: 17px;
 	color: #ffffff;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 }
 
 th,
@@ -168,7 +173,7 @@ th {
 
 .btn-delete {
 	padding: 5px 10px;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 	color: #0a0a0a;
 	border: none;
 }
@@ -185,7 +190,7 @@ th {
 }
 
 #container-summary {
-	color: #635f5f;
+	color: var(--color--secondary);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -222,7 +227,7 @@ td {
 	font-size: 16px;
 	border-radius: 35px;
 	border: solid 1px #aba7a7;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 #order-btn a {
@@ -236,7 +241,7 @@ td {
 	flex-direction: column;
 	margin: 15px;
 	width: 25%;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 .form label {
@@ -254,7 +259,7 @@ td {
 	display: flex;
 	flex-direction: column;
 	/* margin: 15px; */
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 .address-form label {
@@ -304,7 +309,7 @@ td {
 #order-summary .payment-method {
 	display: flex;
 	flex-direction: column;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 #order-summary div {
@@ -319,7 +324,7 @@ td {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 #order-summary td {
@@ -354,7 +359,7 @@ td {
 #order-summary hr {
 	margin: 30px 0;
 	width: 50%;
-	color: #635f5f;
+	color: var(--color--secondary);
 }
 
 #statute input {
@@ -395,7 +400,7 @@ td {
 	text-align: center;
 	padding: 10px 5px;
 	border: 5px solid #dfcb8c;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 }
 
 .payment i {
@@ -410,7 +415,7 @@ td {
 .buyer div {
 	padding: 10px 20px;
 	border: 5px solid #dfcb8c;
-	background-color: #c99f4f;
+	background-color: var(--color--primary);
 }
 
 .buyer p {
