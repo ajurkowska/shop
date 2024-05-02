@@ -50,7 +50,7 @@ nav ul {
 	justify-content: center;
 	gap: 120px 300px;
 	margin: 50px 150px;
-	color: #635F5F;
+	color: #635f5f;
 }
 
 .item-box img {
@@ -108,6 +108,18 @@ select {
 	margin-left: -10px;
 }
 
+h1 {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 /* CART */
 #container-cart {
 	color: #635f5f;
@@ -139,7 +151,8 @@ select {
 	background-color: #c99f4f;
 }
 
-th, td {
+th,
+td {
 	text-align: center;
 	padding: 4px 10px;
 	border-bottom: solid 1px #858383;
@@ -183,11 +196,12 @@ th {
 }
 
 #container-summary th {
-    width: 50%;
+	width: 50%;
 }
 
-#container-summary th, td {
-    padding: 15px;
+#container-summary th,
+td {
+	padding: 15px;
 }
 
 #container-summary h4 {
@@ -195,7 +209,7 @@ th {
 }
 
 #container-summary button {
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
 .total {
@@ -222,7 +236,7 @@ th {
 	flex-direction: column;
 	margin: 15px;
 	width: 25%;
-	color: #635F5F;
+	color: #635f5f;
 }
 
 .form label {
@@ -240,7 +254,7 @@ th {
 	display: flex;
 	flex-direction: column;
 	/* margin: 15px; */
-	color: #635F5F;
+	color: #635f5f;
 }
 
 .address-form label {
@@ -269,7 +283,7 @@ th {
 
 .another-address {
 	display: flex;
-} 
+}
 
 .another-address h3 {
 	margin-left: 10px;
@@ -290,7 +304,7 @@ th {
 #order-summary .payment-method {
 	display: flex;
 	flex-direction: column;
-	color: #635F5F;
+	color: #635f5f;
 }
 
 #order-summary div {
@@ -313,11 +327,12 @@ th {
 }
 
 #order-summary th {
-    width: 50%;
+	width: 50%;
 }
 
-#order-summary th, td {
-    padding: 15px;
+#order-summary th,
+td {
+	padding: 15px;
 }
 
 #order-summary h3 {
@@ -325,7 +340,7 @@ th {
 }
 
 #order-summary button {
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
 #order-summary p {
@@ -339,7 +354,7 @@ th {
 #order-summary hr {
 	margin: 30px 0;
 	width: 50%;
-	color:#635F5F;
+	color: #635f5f;
 }
 
 #statute input {
@@ -453,22 +468,22 @@ th {
 		width: 90%;
 		margin-bottom: 0;
 	}
-	
+
 	#container-cart thead {
 		display: none;
 	}
-	
+
 	#container-cart tr {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 50px;
 	}
-	
+
 	#container-cart td {
 		border-bottom: none;
 		padding: 7px 0;
 	}
-	
+
 	#container-cart td:last-child {
 		padding-bottom: 25px;
 		border-bottom: 1px solid #858383;
@@ -510,7 +525,8 @@ th {
 		width: 90%;
 	}
 
-	#order-summary p, #order-summary hr {
+	#order-summary p,
+	#order-summary hr {
 		width: 80%;
 	}
 
